@@ -1,0 +1,30 @@
+       IDENTIFICATION DIVISION.                                         00000101
+       PROGRAM-ID.                     CONVE.                           00000201
+       ENVIRONMENT DIVISION.                                            00000301
+       DATA DIVISION.                                                   00000401
+       WORKING-STORAGE SECTION.                                         00000501
+      *****AQUI ES EL VALOR DEL SWITCH                                  00000601
+      *****NIVEL 77 TRABAJA CON NIVELES QUE NO TENGAN HIJOS             00000702
+      *****WSS WORKING STORAGE SWITCH                                   00000801
+       77  WSS-SWTICHES                PIC X(01) VALUE '1'.             00000901
+         88 WSS-FIN                              VALUE '0'.             00001001
+      ****AQUI ES EL VALOR DE LAS VARIABLES                             00001101
+      ****WSV WORKING STORAGE VARIABLE                                  00001201
+       01  WSV-VARIABLES.                                               00001301
+           05 WSV-NUMERO-1             PIC 9(03) VALUE ZEROS.           00001401
+           05 WSV-MASCARA              PIC Z(03) VALUE ZEROS.           00001501
+      ****AQUI ES EL VALOR DE LAS CONSTANTES                            00001601
+      ****WSC WORKING STORAGE CONSTANT                                  00001701
+       01  WSC-CONSTANTES.                                              00001801
+           05 WSC-TEXTO-A              PIC X(06) VALUE 'PLATZI'.        00001901
+           05 WSC-TEXTO-2.                                              00002001
+             10 WSC-TEX-2              PIC X(05) VALUE 'COBOL'.         00002101
+      ****EMPEZAMOS CON LOS DISPLAYS                                    00002201
+       PROCEDURE DIVISION.                                              00002301
+           DISPLAY 'CONSTANTES CONTIENE: '     WSC-CONSTANTES           00002401
+           DISPLAY 'VALOR DE VARIABLE 1: '     WSV-NUMERO-1             00002501
+           DISPLAY 'EL VALOR DEL SWTICH: '     WSS-SWTICHES             00002601
+           MOVE 5                      TO WSV-NUMERO-1                  00002701
+           MOVE WSV-NUMERO-1           TO WSV-MASCARA                   00002801
+           DISPLAY 'VALOR ENMASCARADO ES: '    WSV-MASCARA              00002901
+           STOP RUN.                                                    00003001

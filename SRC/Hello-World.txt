@@ -1,0 +1,7 @@
+        IDENTIFICATION DIVISION.                                        00000101
+        PROGRAM-ID.                    HOLA.                            00000203
+        ENVIRONMENT DIVISION.                                           00000302
+        DATA DIVISION.                                                  00000401
+        PROCEDURE DIVISION.                                             00000501
+           DISPLAY 'HELLO WORLD!'.                                      00000601
+           STOP RUN.                                                    00000701

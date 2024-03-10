@@ -1,0 +1,26 @@
+       IDENTIFICATION DIVISION.                                         00000101
+       PROGRAM-ID.                    'PERFORM'.                        00000201
+       ENVIRONMENT DIVISION.                                            00000301
+       DATA DIVISION.                                                   00000401
+       WORKING-STORAGE SECTION.                                         00000501
+       01  WSV-VARIABLES                                                00000601
+           05 WSV-CONTADOR             PIC 9(03) VALUE ZEROS.           00000701
+           05 WSV-INC                  PIC 9(03) VALUE ZEROS.           00000801
+      *                                                                 00000901
+       PROCEDURE DIVISION.                                              00001001
+       010-MAIN.                                                        00001101
+      *USO DE PERFORM TIMES                                             00001201
+           PERFORM 040-VEC 3 TIMES                                      00001301
+      *PERFORM UNTIL                                                    00001401
+           PERFORM 041-VEC UNTIL WSV-INC = 6                            00001501
+           PERFORM 050-RETURN.                                          00001601
+       010-FIN.                                                         00001701
+       040-VEC.                                                         00001801
+           ADD 1                       TO WSV-CONTADOR                  00001901
+           DISPLAY 'EL VALOR DEL CONTADOR ES ' WSV-CONTADOR.            00002001
+       041-VEC.                                                         00002101
+           ADD 1                       TO WSV-INC                       00002201
+           DISPLAY 'EL VALOR DEL INCREMENTO ES ' WSV-INC.               00002301
+       050-RETURN                                                       00002401
+           STOP RUN.                                                    00002501
+       050-FIN.                                                         00002601

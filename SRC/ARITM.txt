@@ -1,0 +1,32 @@
+       IDENTIFICATION DIVISION.                                         00000101
+       PROGRAM-ID.                     ARITM.                           00000201
+       ENVIRONMENT DIVISION.                                            00000301
+       DATA DIVISION.                                                   00000401
+       WORKING-STORAGE SECTION.                                         00000501
+       77  WSC-NUM-A                   PIC 9(01) VALUE 5.               00000601
+       77  WSC-NUM-B                   PIC 9(01) VALUE 9.               00000701
+      *                                                                 00000801
+       77  WSV-RESULT-1                PIC 9(02) VALUE ZEROS.           00000901
+       77  WSV-RESULT-2                PIC 9(02) VALUE ZEROS.           00001001
+       77  WSV-RESULT-3                PIC 9(02) VALUE ZEROS.           00001101
+       77  WSV-RESULT-4                PIC 9(02) VALUE ZEROS.           00001201
+       77  WSV-RESULT-5                PIC 9(02) VALUE ZEROS.           00001301
+                                                                        00001401
+       PROCEDURE DIVISION.                                              00001501
+       010-MAIN.                                                        00001601
+      *ADD                                                              00001701
+           ADD WSC-NUM-A TO WSC-NUM-B GIVING WSV-RESULT-1               00001801
+      *SUBTRACT                                                         00001901
+           SUBTRACT WSC-NUM-B FROM WSC-NUM-A GIVING WSV-RESULT-2        00002001
+      *MULTIPLY                                                         00002101
+           MULTIPLY WSC-NUM-A BY  WSC-NUM-B GIVING WSV-RESULT-3         00002201
+      *DIVIDE                                                           00002301
+           DIVIDE   WSC-NUM-A BY  WSC-NUM-B GIVING WSV-RESULT-4         00002401
+      *COMPUTE                                                          00002501
+           COMPUTE  WSV-RESULT-5 = WSC-NUM-A * WSC-NUM-B                00002601
+           DISPLAY 'RESULTADO 1: ' WSV-RESULT-1                         00002701
+           DISPLAY 'RESULTADO 2: ' WSV-RESULT-2                         00002801
+           DISPLAY 'RESULTADO 3: ' WSV-RESULT-3                         00002901
+           DISPLAY 'RESULTADO 4: ' WSV-RESULT-4                         00003001
+           DISPLAY 'RESULTADO 5: ' WSV-RESULT-5                         00003101
+           STOP RUN.                                                    00003201
